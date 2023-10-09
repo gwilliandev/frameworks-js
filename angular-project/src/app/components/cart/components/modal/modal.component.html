@@ -1,0 +1,49 @@
+<ng-container *ngIf="display$ | async as display">
+	<div class="absolute top-0 left-0 w-screen h-screen" *ngIf="display === 'open'">
+		<div class="absolute top-0 left-0 w-screen h-screen bg-black opacity-75 z-[1000]" (click)="close()"></div>
+		<div class="modal-container modal-fadeIn">
+			<div class="flex flex-col pt-3 px-3 border-t border-[#dee2e6]">
+				<div *ngIf="isCartWithItems" class="flex flex-col gap-4 my-4">
+					<div *ngFor="let item of (cartItems | async)" class="flex items-center gap-4">
+						<img *ngIf="item.image" [src]="item.image" class="w-[60px]" />
+						<div *ngIf="!item.image" class="w-[60px]"></div>
+
+						<span class="flex-[5]">{{ item.title }}</span>
+						<span class="flex-1">${{ item.price }}</span>
+						<div class="flex items-center justify-center gap-4 w-[60px]">
+							<button (click)="handleRemoveItemFromCart(item.id)" class="text-lg">-</button>
+							<span class="text-base">{{ item.count }}</span>
+							<button (click)="handleAddItemToCart(item)" class="text-lg">+</button>
+						</div>
+						<span class="flex-1">${{ item.price * item.count }}</span>
+						<button
+							(click)="handleRemoveItemFromCart(item.id)"
+							class="flex items-center justify-center w-[30px] h-[30px] p-3 text-white bg-[#dc3545] hover:bg-[#c82333] transition"
+						>
+							X
+						</button>
+					</div>
+
+					<div class="flex items-center justify-between">
+						<span class="ml-[76px]">Total</span>
+						<span class="mr-[50px]">${{ cartTotalValue }}</span>
+					</div>
+				</div>
+
+				<div *ngIf="!isCartWithItems" class="flex">
+					<span class="flex-1 text-lg text-[#721c24] bg-[#f8d7da] border border-[#f5c6cb] px-7 py-3 my-4">Your cart is empty</span>
+				</div>
+			</div>
+			<div class="flex items-center justify-end gap-1 pt-3 px-3 border-t border-[#dee2e6]">
+				<button (click)="close()" class="font-smoothing-auto py-1 px-2 text-black hover:text-gray-800 transition">Close</button>
+				<button
+					*ngIf="isCartWithItems"
+					(click)="handleCheckout()"
+					class="font-smoothing-auto py-1 px-2 text-white bg-[#be8040] hover:bg-[#a16d36] transition"
+				>
+					Checkout
+				</button>
+			</div>
+		</div>
+	</div>
+</ng-container>

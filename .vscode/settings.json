@@ -1,0 +1,43 @@
+{
+  "editor.formatOnSave": false,
+
+  "files.exclude": {
+    // Folders
+    "**/node_modules": true,
+    "**/dist": true,
+
+    // Commom Files
+    "**/README.md": true,
+    "**/package-lock.json": true,
+    "**/.gitignore": true,
+    "**/tsconfig.json": true,
+    "**/tsconfig.*.json": true,
+    "**/.eslintrc.cjs": true,
+    "**/.eslintrc.js": true,
+    "**/.prettierrc": true,
+    "**/.prettierignore": true,
+    "**/vite.config.ts": true,
+    "**/.editorconfig": true,
+
+    // React Files
+    "**/vite-env.d.ts": true,
+
+    // Vue Files
+    "**/env.d.ts": true,
+
+    // Angular Files
+    "**/.angular": true,
+    "**/angular.json": true,
+
+    // Test Files
+    "**/test": true,
+    "**/*.spec.ts": true
+  },
+  "cSpell.words": [
+    "fontawesome",
+    "fortawesome",
+    "kolirt",
+    "logotipo",
+    "vuex"
+  ]
+}

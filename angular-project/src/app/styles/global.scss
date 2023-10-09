@@ -1,0 +1,50 @@
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Abhaya Libre", serif;
+}
+
+.font-smoothing-auto {
+  -webkit-font-smoothing: auto;
+}
+
+#hero {
+  background-image: url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80);
+  background-color: #00000080;
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#hero-2 {
+  background-image: url(https://images.unsplash.com/photo-1532509334149-d2130d74253c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80);
+  background-color: #00000080;
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-title {
+  -webkit-font-smoothing: auto;
+  font-family: "Bungee Inline", cursive;
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

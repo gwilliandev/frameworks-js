@@ -1,0 +1,19 @@
+<div *ngIf="checkoutCart.length" id="hero-2" class="min-w-screen min-h-screen">
+	<div class="center flex flex-col items-center content-center justify-center gap-8">
+		<h1 class="text-white text-5xl">Checkout completed successfully</h1>
+
+		<div *ngFor="let item of checkoutCart" class="flex items-center gap-4 text-white">
+			<span class="text-lg">{{ item.count }}</span>
+			<span class="text-xs">X</span>
+			<span class="text-lg">{{ item.title }}</span>
+		</div>
+		<div class="flex items-center justify-center w-full text-white">
+			<span class="text-lg font-smoothing-auto border-b border-transparent">Total</span>
+			<span class="flex-1 mt-2 mx-2 border-b border-dashed border-[#aaa]"></span>
+			<span class="text-lg font-smoothing-auto border-b border-transparent">${{ cartTotalValue }}</span>
+		</div>
+		<a routerLink="/" class="text-xl text-white">Back to Menu</a>
+	</div>
+</div>
+
+<app-page404 *ngIf="!checkoutCart.length" />

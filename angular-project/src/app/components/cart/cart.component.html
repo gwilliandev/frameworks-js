@@ -1,0 +1,5 @@
+<button (click)="openModal()" class="flex items-center gap-2">
+	<span *ngIf="isCartWithItems">{{ cartItems | async }}</span>
+	<i class="fas fa-light fa-cart-shopping"></i>
+</button>
+<app-modal></app-modal>

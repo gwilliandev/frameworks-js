@@ -1,0 +1,31 @@
+<header>
+	<nav class="flex items-center z-[1] bg-white py-3 px-7 w-full fixed top-0 left-0 z-[1030] border-b border-gray-200">
+		<a routerLink="/" class="mr-8">
+			<img src="https://wowthemesnet.github.io/template-fooddelivery-bootstrap-html/img/logo.png" alt="logotipo" class="max-w-full max-h-[40px]" />
+		</a>
+		<div class="flex-1 flex items-center">
+			<div class="flex-1 flex items-center gap-4">
+				<button (click)="handleScrollToTop()" class="text-black">Welcome</button>
+				<button (click)="handleScrollToMenu()" class="text-[#00000080] hover:text-black transition">Today's Menu</button>
+			</div>
+			<div class="mx-auto">
+				<app-cart />
+			</div>
+		</div>
+	</nav>
+</header>
+<main>
+	<ng-content></ng-content>
+</main>
+<footer class="py-7 text-center w-full">
+	<p>
+		©
+		<a
+			class="text-[#be8040] hover:text-[#85592d] hover:underline transition"
+			href="https://bootstrapstarter.com/bootstrap-templates/template-fooddelivery-bootstrap-html/"
+		>
+			"Food Delivery HTML Template"
+		</a>
+		by WowThemes.net
+	</p>
+</footer>
